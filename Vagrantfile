@@ -7,7 +7,7 @@ VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure("2") do |config|
   config.vm.define "phusion" do |v|
     v.vm.provider "docker" do |d|
-      # Uncomment the following line if you are on a 64bit linux host and don't want to boot2docker
+      # Uncomment the following line if you want to force vagrant to boot2docker
       # d.force_host_vm = true
       d.cmd     = ["/sbin/my_init", "--enable-insecure-key"]
       d.build_dir = "./"
@@ -15,6 +15,7 @@ Vagrant.configure("2") do |config|
     end
 
     v.ssh.username = "root"
+    #make this file and put your public key here.
     v.ssh.private_key_path = "./config/container/phusion.key"
 
   end
