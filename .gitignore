@@ -24,3 +24,6 @@ pkg
 *.deb
 script/package
 .idea
+.vagrant
+config/container/.vagrant
+config/container/phusion.key
