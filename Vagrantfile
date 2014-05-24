@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.define "phusion" do |v|
     v.vm.provider "docker" do |d|
       # Uncomment the following line if you want to force vagrant to boot2docker
-      # d.force_host_vm = true
+      d.force_host_vm = true
       d.cmd     = ["/sbin/my_init", "--enable-insecure-key"]
       d.build_dir = "./"
       d.has_ssh = true
